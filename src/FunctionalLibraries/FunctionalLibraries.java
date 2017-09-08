@@ -110,6 +110,10 @@ public void ClickByXpath(WebDriver driver, String Xpath,  String input, String D
 			//System.out.println(e.getMessage());
 		}
     }
+/*public WebElement findElementsByXpath(WebDriver driver,String Xpath)
+{
+	WebElement element = driver.findElement(By.xpath(""));
+}*/
 
 /*public void ClickByindexXpath(WebDriver driver, String Xpath, int index, String input, String Description, String ExpectedResult, String ActualResult, String Screenshot) throws InterruptedException{
 	
@@ -195,7 +199,7 @@ public void ClickByName(WebDriver driver, String name,  String input, String Des
 		            .withTimeout(60, TimeUnit.SECONDS)
 		            .pollingEvery(10, TimeUnit.SECONDS)
 		            .ignoring(NoSuchElementException.class);
-    		waitforElement.until(ExpectedConditions.elementToBeClickable(By.id(ID)));
+    		//waitforElement.until(ExpectedConditions.elementToBeClickable(By.id(ID)));    commented
     		driver.findElement(By.id(ID)).clear();
     		driver.findElement(By.id(ID)).sendKeys(value);
     		//reportstep(input, Description, "SUCCESS", ExpectedResult, ActualResult,Screenshot);
@@ -441,6 +445,20 @@ public void entervalueBycss(WebDriver driver, String css, String value, String i
 		}
     }
     
+    
+    
+    public  WebElement findByXpath(WebDriver driver, String xpath)
+    {
+    	WebElement element = driver.findElement(By.xpath(xpath));
+    	if(element!=null)
+    	{
+    		return element;
+    	}
+    	else
+    		return null;
+    }
+
+    
     public void checkboxByxpath(WebDriver driver, String xpath, String value, String input, String Description, String ExpectedResult, String ActualResult, String Screenshot) throws InterruptedException{
     	
         try{
@@ -560,7 +578,8 @@ public void RedioButtonByID(WebDriver driver, String id, String value, String in
     	}
     	
     }
-
+    
+   
 
 
 }

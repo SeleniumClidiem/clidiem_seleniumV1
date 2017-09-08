@@ -1,13 +1,13 @@
 package Loggings;
 
-import org.apache.commons.logging.Log;
-import org.testng.log4testng.Logger;
 
-import atu.testng.reports.logging.LogAs;
+import org.apache.log4j.Logger;
+
+
 
 public class Logs {
 	
-	 private static Logger Log = Logger.getLogger(Log.class.getName());//getLogger(Log.class.getName()); 
+	 private static Logger Log = Logger.getLogger(Logs.class.getName());//getLogger(Log.class.getName()); 
 	 
 	// This is to print log for the beginning of the test case, as we usually run so many test cases as a test suite
 	 
@@ -29,9 +29,9 @@ public class Logs {
 	 
 	public static void endTestCase(String sTestCaseName){
 	 
-	    LogAs.info("XXXXXXXXXXXXXXXXXXXXXXX             "+"-E---N---D-"+"             XXXXXXXXXXXXXXXXXXXXXX");
+	    Log.info("XXXXXXXXXXXXXXXXXXXXXXX             "+"-E---N---D-"+"             XXXXXXXXXXXXXXXXXXXXXX");
 	 
-	    LogAs.info("X");
+	    Log.info("X");
 	 
 	    Log.info("X");
 	 
@@ -63,7 +63,7 @@ public class Logs {
 	 
 	public static void fatal(String message) {
 	 
-	    LogAs.fatal(message);
+	    Log.fatal(message);
 	 
 	    }
 	 

@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -63,14 +66,35 @@ public class FunctionalCases {
 			e.printStackTrace();
 		}
 	}
+	public void verifyEmailID(WebDriver driver) throws IOException
+	{
+		try
+		{
 	
-public void companyRegistration(WebDriver driver) throws IOException, InterruptedException, FileNotFoundException{
+			input = new FileInputStream("Configuration\\ObjectRepository.properties");
+			obj.load(input);
+			fl.invokeApplication(driver, obj.getProperty("BaseURL"), "", "", "", "", "","");
+		}
+		catch(FileNotFoundException e) 
+		{
+			System.out.println("File not there");
+		}
+		catch(WebDriverException e)
+		{
+			e.printStackTrace();
+		}
+		
+	}   
+	
+	
+	
+public void companyRegistration(WebDriver driver) throws IOException, InterruptedException, FileNotFoundException {
 		
 		try{
 		input = new FileInputStream("Configuration\\ObjectRepository.properties");
 		obj.load(input);
-		//ExcelUtils RC = new ExcelUtils("TestData\\RegisterCompany.xlsx");
-		//WB = RC.openWorkboo("TestData\\RegisterCompany.xlsx");
+		ExcelUtils RC = new ExcelUtils("TestData\\RegisterCompany.xlsx");
+		//WB = RC.openWorkbook("TestData\\RegisterCompany.xlsx");
 		
 		//input1 = new FileInputStream("TestData\\RegisterCompany.xlsx");
 		//obj.load(input1);
@@ -103,8 +127,18 @@ public void companyRegistration(WebDriver driver) throws IOException, Interrupte
 		
 		//Thread.sleep(3000);
 		fl.ClickByXpath(driver, obj.getProperty("CompanyRegisterxpath"), "", "", "", "", "");
-		Thread.sleep(3000);
-		fl.navigateurl(driver, obj.getProperty("BaseURL"), "", "", "", "", "", "");
+		Thread.sleep(10000);
+		// fl.navigateurl(driver, obj.getProperty("BaseURL"), "", "", "", "", "", "");     Commented
+		//fl.assertextbyID(driver, obj.getProperty("Verification_form"), "Verify Email", "", "", "", "", "");
+		
+		fl.entervalueByID(driver, obj.getProperty("Verififcation_textbox"), "Sample", "", "", "", "", "");
+		Thread.sleep(10000);
+		//DB Connection
+	/*	Class.forName("com.microsoft.jdbc.sqlserver.SQLServerDriver");
+        Connection conn =DriverManager.getConnection("jdbc:microsoft:sqlserver://localhost:1433;User="";Password="");*/
+		
+		fl.checkboxByxpath(driver, obj.getProperty("verify_click"), "", "", "", "", "", "");
+		
 		}   
 		}catch(FileNotFoundException e) {
 			System.out.println("File not there");
@@ -112,6 +146,20 @@ public void companyRegistration(WebDriver driver) throws IOException, Interrupte
 			e.printStackTrace();
 		}
 	}
+
+public void  VerifyEmaidID(WebDriver driver) throws IOException, InterruptedException
+{
+	try{
+		input = new FileInputStream("Configuration\\ObjectRepository.properties");
+		obj.load(input);
+		fl.entervalueByXpath(driver, obj.getProperty("Verififcation_textbox"), "", "", "", "", "", "");
+		fl.checkboxByxpath(driver, obj.getProperty("verify_click"), "", "", "", "", "", "");
+	}
+	catch(WebDriverException e){
+		e.printStackTrace();
+	}
+	
+}
 
 public void companyLogin(WebDriver driver) throws IOException, InterruptedException{
 	
@@ -146,7 +194,7 @@ public void candidateLogin(WebDriver driver) throws IOException, InterruptedExce
 	try{
 	input = new FileInputStream("Configuration\\ObjectRepository.properties");
 	obj.load(input);
-	ExcelUtils CA = new ExcelUtils("Test\\CandidateLogin.xlsx");
+	ExcelUtils CA = new ExcelUtils("TestData\\CandidateLogin.xlsx");
 	
 	fl.invokeApplication(driver, obj.getProperty("BaseURL"), "", "", "", "", "","");
 	

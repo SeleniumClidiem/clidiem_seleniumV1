@@ -1,6 +1,7 @@
 package Utilities;
 
 
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -9,6 +10,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 
 
@@ -17,6 +20,16 @@ public class ExcelUtils {
 	private XSSFWorkbook Workbook = null;
 	private XSSFSheet Worksheet = null;
 	
+	
+/*	public String  Environment(String propertyname) throws IOException
+	{
+		InputStream instream = getClass().getClassLoader().getResourceAsStream("Clidiem\\Configuration\\ObjectRepository.Properties");
+		Properties prop = new Properties();
+		prop.load(instream);
+		prop = prop.getProperty(propertyname);
+	}
+	
+*/	
 	public ExcelUtils(String FilePath)    {
 		
 		FileInputStream fis;
@@ -81,13 +94,17 @@ public class ExcelUtils {
 	public int getLastrowno(String SheetName){
 		Worksheet = Workbook.getSheet(SheetName);
 		int rowcount = Worksheet.getLastRowNum();
-		return rowcount;
+		return rowcount+1;
 	}
 	public int getLastcolmno(String SheetName){
 		Worksheet = Workbook.getSheet(SheetName);
-		int colmcount = Worksheet.getLastRowNum();
-		return colmcount;
+	//	int colmcount = Worksheet.getLastRowNum();              //DOUBT
+		Row r = Worksheet.getRow(1);              //any one row is enough to know how many columns are there
+		int maxCell=  r.getLastCellNum();
+		
+		return maxCell;
 	}
+	
 
 }
 	

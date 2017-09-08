@@ -1,63 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="222034" started-at="2017-09-01T08:16:41Z" finished-at="2017-09-01T08:20:23Z">
+  <suite name="Default suite" duration-ms="306854" started-at="2017-09-08T11:34:35Z" finished-at="2017-09-08T11:39:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="222034" started-at="2017-09-01T08:16:41Z" finished-at="2017-09-01T08:20:23Z">
-      <class name="BatchExecution.CompanyLoginScenario">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:BatchExecution.CompanyLoginScenario@55fe41ea]" name="Setup" is-config="true" duration-ms="3398" started-at="2017-09-01T13:46:41Z" finished-at="2017-09-01T13:46:45Z">
+    <test name="Default test" duration-ms="306854" started-at="2017-09-08T11:34:35Z" finished-at="2017-09-08T11:39:42Z">
+      <class name="BatchExecution.CompanyRegistration">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:BatchExecution.CompanyRegistration@1ebd319f]" name="Setup" is-config="true" duration-ms="2716" started-at="2017-09-08T17:04:35Z" finished-at="2017-09-08T17:04:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="FAIL" signature="CompanyLoginTest()[pri:0, instance:BatchExecution.CompanyLoginScenario@55fe41ea]" name="CompanyLoginTest" duration-ms="211644" started-at="2017-09-01T13:46:45Z" finished-at="2017-09-01T13:50:16Z">
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[Cannot find elements when the XPath expression is null.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Cannot find elements when the XPath expression is null.
-	at org.openqa.selenium.By.xpath(By.java:113)
-	at FunctionalLibraries.FunctionalLibraries.ClickByXpath(FunctionalLibraries.java:98)
-	at Businessfunctions.FunctionalCases.AddTimeSheet(FunctionalCases.java:871)
-	at BatchExecution.CompanyLoginScenario.CompanyLoginTest(CompanyLoginScenario.java:39)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+        <test-method status="PASS" signature="CompanyRegistrationTest()[pri:0, instance:BatchExecution.CompanyRegistration@1ebd319f]" name="CompanyRegistrationTest" duration-ms="298585" started-at="2017-09-08T17:04:37Z" finished-at="2017-09-08T17:09:36Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CompanyLoginTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:BatchExecution.CompanyLoginScenario@55fe41ea]" name="teardown" is-config="true" duration-ms="6916" started-at="2017-09-01T13:50:16Z" finished-at="2017-09-01T13:50:23Z">
+        </test-method> <!-- CompanyRegistrationTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:BatchExecution.CompanyRegistration@1ebd319f]" name="teardown" is-config="true" duration-ms="5540" started-at="2017-09-08T17:09:36Z" finished-at="2017-09-08T17:09:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- BatchExecution.CompanyLoginScenario -->
+      </class> <!-- BatchExecution.CompanyRegistration -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
