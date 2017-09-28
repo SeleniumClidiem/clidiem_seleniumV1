@@ -4,6 +4,7 @@ package Utilities;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -11,25 +12,19 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Iterator;
 import java.util.Properties;
 
 
 
-public class ExcelUtils {
+public class ExcelUtils{
 	
 	private XSSFWorkbook Workbook = null;
 	private XSSFSheet Worksheet = null;
+	private XSSFCell Cell=null;
+	ExcelUtils E_Utils;
 	
-	
-/*	public String  Environment(String propertyname) throws IOException
-	{
-		InputStream instream = getClass().getClassLoader().getResourceAsStream("Clidiem\\Configuration\\ObjectRepository.Properties");
-		Properties prop = new Properties();
-		prop.load(instream);
-		prop = prop.getProperty(propertyname);
-	}
-	
-*/	
+
 	public ExcelUtils(String FilePath)    {
 		
 		FileInputStream fis;
@@ -43,19 +38,10 @@ public class ExcelUtils {
 			e.printStackTrace();
 		}
 		
-	}
-	/*
-	public ExcelUtils() {
-		// TODO Auto-generated constructor stub
-	}*/
+}
 	
-	/*public XSSFWorkbook openWorkbook(String FilePath) throws IOException {
-		FileInputStream fis = new FileInputStream(FilePath);
-		Workbook = new XSSFWorkbook(fis);
-		return Workbook;
-	}*/
-
-	public int getNumberOfRows(String SheetName) {
+	
+public int getNumberOfRows(String SheetName) {
 		Worksheet = Workbook.getSheet(SheetName);
 		if(Worksheet != null) {
 			return Worksheet.getLastRowNum();
@@ -105,6 +91,67 @@ public class ExcelUtils {
 		return maxCell;
 	}
 	
+	
+	public Object[][] readXLSXFile(String Sheet) throws IOException //String[][]
+	{
+		
+
+		Worksheet = Workbook.getSheet(Sheet);
+		int Total_Rows =Worksheet.getLastRowNum()+1;
+		Row r = Worksheet.getRow(1);              //any one row is enough to know how many columns are there
+		int Total_Column=  r.getLastCellNum();
+		
+		
+		System.out.println(Total_Rows);
+		System.out.println(Total_Column);
+		Object[][] excelData = new Object[Total_Rows-1][Total_Column-1];
+		System.out.println("excel rows and columns");
+		
+		
+		
+		for(int i=1;i<Total_Rows;i++)
+		{
+			//XSSFRow row = Worksheet.getRow(i);
+			for(int j=1;j<Total_Column;j++)
+			{
+				
+				 excelData[i-1][j-1]=Worksheet.getRow(i).getCell(j).getStringCellValue();
+				
+				//System.out.println(j);
+				System.out.println(excelData[i-1][j-1]);
+			}
+			//System.out.println(i);
+		}
+		return excelData;
+		
+	}
+	public Object[][] readXLSXFile_Sample(String Sheet) throws IOException //String[][]
+	{
+
+		Worksheet = Workbook.getSheet(Sheet);
+		int Total_Rows =Worksheet.getLastRowNum()+1;
+		Row r = Worksheet.getRow(1);              //any one row is enough to know how many columns are there
+		int Total_Column=  r.getLastCellNum();
+		
+		System.out.println(Total_Rows);
+		System.out.println(Total_Column);
+		Object[][] excelData = new Object[Total_Rows][Total_Column];
+		System.out.println("excel rows and columns");
+		
+		for(int i=0;i<Total_Rows-1;i++)
+		{
+			for(int j=0;j<Total_Column;j++)
+			{
+				excelData[i][j]=Worksheet.getRow(i+1).getCell(j).getStringCellValue();
+				System.out.println(excelData[i][j]);
+			}
+			
+		}
+		return excelData;
+		
+	}
+
+
 
 }
 	

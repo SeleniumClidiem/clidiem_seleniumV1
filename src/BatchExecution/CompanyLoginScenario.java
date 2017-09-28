@@ -16,7 +16,7 @@ public class CompanyLoginScenario extends BrowserSetup{
 		  
 		   fc.companyLogin(driver);
 		   
-		   //fc.AddConsultantList(driver);
+		 //  fc.AddConsultantList(driver);
 		   
 		   //fc.AddNewJob(driver);
 		   

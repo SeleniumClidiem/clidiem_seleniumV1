@@ -31,6 +31,7 @@ public class FunctionalLibraries {
 			reportstep(input, Description, "SUCCESS", ExpectedResult, ActualResult,Screenshot);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
 			// where is the error?
 			
 		}catch (WebDriverException e){
@@ -39,6 +40,7 @@ public class FunctionalLibraries {
 			//reportstep(input, Description, "FAILED", ExpectedResult, ActualResult,Screenshot);
 			//System.out.println(e.getMessage());
 		}
+		//return driver;
 	}
 	
 public void navigateurl(WebDriver driver, String navURL, String browser, String input, String Description, String ExpectedResult, String ActualResult, String Screenshot){
@@ -264,6 +266,48 @@ public void ClickByName(WebDriver driver, String name,  String input, String Des
  			//System.out.println(e.getMessage());
  		}
      }
+     
+     
+public void selectDropdownByID_checkOPtionexist(WebDriver driver, String id,String text, String input, String Description, String ExpectedResult, String ActualResult, String Screenshot) throws InterruptedException{
+    	 
+    	 try{
+     		
+     		FluentWait<WebDriver> waitforElement = new FluentWait<WebDriver>(driver)
+ 		            .withTimeout(60, TimeUnit.SECONDS)
+ 		            .pollingEvery(10, TimeUnit.SECONDS)
+ 		            .ignoring(NoSuchElementException.class);
+     		waitforElement.until(ExpectedConditions.elementToBeClickable(By.id(id)));
+     		WebElement element = driver.findElement(By.id(id));
+     		Select dropdownElement = new Select(element);
+     		Thread.sleep(4000);
+     		//Assert.assertEquals(text, getSelectedOption(element), "Selected Value not displaying");
+     		List<WebElement> drop_List=dropdownElement.getOptions();
+     		System.out.println("List Hold options");
+     		for(WebElement option : drop_List){
+     			System.out.println(option.getText());
+     	        if(option.getText().equals(text)) {
+     	            option.click();
+     	            break;
+     	        	
+     	        }
+     		}
+     		
+     		
+     		//reportstep(input, Description, "SUCCESS", ExpectedResult, ActualResult,Screenshot);
+     	}catch(NoSuchElementException e){
+ 			e.printStackTrace();
+ 			//reportstep(input, Description, "FAILED", ExpectedResult, ActualResult,Screenshot);
+ 			//System.out.println(e.getMessage());
+ 		}catch (WebDriverException e){
+ 			
+ 			e.printStackTrace();
+ 			//reportstep(input, Description, "FAILED", ExpectedResult, ActualResult,Screenshot);
+ 			//System.out.println(e.getMessage());
+ 		}
+    	 
+     }
+     
+
      
 public void selectDropdownByxpath(WebDriver driver, String xpath,String text, String input, String Description, String ExpectedResult, String ActualResult, String Screenshot) throws InterruptedException{
     	 

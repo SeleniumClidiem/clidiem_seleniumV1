@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="BatchExecution.Hybrid_Framework">
+      <class name="BatchExecution.Company_Login_Logout">
         <methods>
-          <include name="Frame"/>
+          <include name="loginLogout"/>
         </methods>
-      </class> <!-- BatchExecution.Hybrid_Framework -->
+      </class> <!-- BatchExecution.Company_Login_Logout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

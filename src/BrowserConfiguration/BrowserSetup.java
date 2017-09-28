@@ -14,37 +14,36 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-public class BrowserSetup {
+import Utilities.proprties_Read;
+
+public class BrowserSetup extends proprties_Read{
 	
 	public static WebDriver driver;
 	
-	public Properties obj = new Properties();
-	public InputStream input=null;
+	
 	//public static InputStream input1=null;
 	
 	@BeforeTest
 	public WebDriver Setup()throws IOException{
 		
-		input = new FileInputStream("Configuration\\ObjectRepository.properties");
-		obj.load(input);
 		
-		if(obj.getProperty("Browser").equalsIgnoreCase("FF")){
+		if(Environment("Browser").equalsIgnoreCase("FF")){
 			
-			File file = new File("driver\\geckodriver.exe");
+			File file = new File("drivers\\geckodriver.exe");
 			System.setProperty("webdriver.gecko.driver",file.getAbsolutePath());
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 			capabilities.setCapability("marionette", true);
 			driver = new FirefoxDriver(capabilities);
 			
-		}else if(obj.getProperty("Browser").equalsIgnoreCase("Chrome")){
+		}else if(Environment("Browser").equalsIgnoreCase("Chrome")){
 			
-			File file = new File("driver\\chromedriver.exe");
+			File file = new File("drivers\\chromedriver.exe");
 			System.setProperty("webdriver.chrome.driver",file.getAbsolutePath());
 			driver = new ChromeDriver();
 			
-		}else if(obj.getProperty("Browser").equalsIgnoreCase("IE")){
+		}else if(Environment("Browser").equalsIgnoreCase("IE")){
 			
-			File file = new File("driver\\IEDriverServer.exe");
+			File file = new File("drivers\\IEDriverServer.exe");
 			System.setProperty("webdriver.ie.driver",file.getAbsolutePath());
 			driver = new InternetExplorerDriver();
 			
@@ -77,9 +76,9 @@ public class BrowserSetup {
 		input = new FileInputStream("Configuration\\Enviornment.properties");
 		obj.load(input);
 		
-        System.out.println(obj.getProperty("BaseURL"));
+        System.out.println(Environment("BaseURL"));
 		
-		System.out.println(obj.getProperty("Browser"));
+		System.out.println(Environment("Browser"));
 		
 	}*/
 

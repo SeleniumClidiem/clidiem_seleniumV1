@@ -1,21 +1,527 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="306854" started-at="2017-09-08T11:34:35Z" finished-at="2017-09-08T11:39:42Z">
+  <suite name="Default suite" duration-ms="9625604" started-at="2017-09-27T11:42:27Z" finished-at="2017-09-27T14:22:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="306854" started-at="2017-09-08T11:34:35Z" finished-at="2017-09-08T11:39:42Z">
+    <test name="Default test" duration-ms="9625604" started-at="2017-09-27T11:42:27Z" finished-at="2017-09-27T14:22:53Z">
       <class name="BatchExecution.CompanyRegistration">
-        <test-method status="PASS" signature="Setup()[pri:0, instance:BatchExecution.CompanyRegistration@1ebd319f]" name="Setup" is-config="true" duration-ms="2716" started-at="2017-09-08T17:04:35Z" finished-at="2017-09-08T17:04:37Z">
+        <test-method status="PASS" signature="Setup()[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="Setup" is-config="true" duration-ms="2693" started-at="2017-09-27T17:12:27Z" finished-at="2017-09-27T17:12:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method status="PASS" signature="CompanyRegistrationTest()[pri:0, instance:BatchExecution.CompanyRegistration@1ebd319f]" name="CompanyRegistrationTest" duration-ms="298585" started-at="2017-09-08T17:04:37Z" finished-at="2017-09-08T17:09:36Z">
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="977476" started-at="2017-09-27T17:12:30Z" data-provider="custData" finished-at="2017-09-27T17:28:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Datta]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[centera]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cen1@ahe.cam]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342396]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010431]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem10.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CompanyRegistrationTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:BatchExecution.CompanyRegistration@1ebd319f]" name="teardown" is-config="true" duration-ms="5540" started-at="2017-09-08T17:09:36Z" finished-at="2017-09-08T17:09:42Z">
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="959353" started-at="2017-09-27T17:28:48Z" data-provider="custData" finished-at="2017-09-27T17:44:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Reshm]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Accenture]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[velit@nann.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342388]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010432]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem2.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="958804" started-at="2017-09-27T17:44:47Z" data-provider="custData" finished-at="2017-09-27T18:00:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ratan]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[delta ]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[amet@seam.edu]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342389]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010433]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem3.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="964009" started-at="2017-09-27T18:00:46Z" data-provider="custData" finished-at="2017-09-27T18:16:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Amron]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sofia]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[amron@seial.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342390]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010434]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem4.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="958280" started-at="2017-09-27T18:16:50Z" data-provider="custData" finished-at="2017-09-27T18:32:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[koyal]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[softonic]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[koyal@12coal.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342391]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010435]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem5.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="959344" started-at="2017-09-27T18:32:48Z" data-provider="custData" finished-at="2017-09-27T18:48:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[lasa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[syntel ]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[lasa32@cosal.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342392]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010436]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem6.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="964165" started-at="2017-09-27T18:48:48Z" data-provider="custData" finished-at="2017-09-27T19:04:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tina]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Intel]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tina@nullaal.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342393]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010437]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem7.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="959191" started-at="2017-09-27T19:04:52Z" data-provider="custData" finished-at="2017-09-27T19:20:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Toshi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[instra]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[toshire@agetal.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342394]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010438]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem8.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="957949" started-at="2017-09-27T19:20:51Z" data-provider="custData" finished-at="2017-09-27T19:36:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Desh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[contel]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[desh@teshaam.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342395]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010439]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem9.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="read(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="read" duration-ms="957959" started-at="2017-09-27T19:36:49Z" data-provider="custData" finished-at="2017-09-27T19:52:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ashutosh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Panacy]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[ashutosh@glsal.co]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1992342387]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[101010440]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[temp.clidiem1.com]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Test@123]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[999999]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- read -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:BatchExecution.CompanyRegistration@3abbfa04]" name="teardown" is-config="true" duration-ms="5563" started-at="2017-09-27T19:52:47Z" finished-at="2017-09-27T19:52:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

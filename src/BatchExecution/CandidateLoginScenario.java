@@ -16,7 +16,8 @@ FunctionalCases fc = new FunctionalCases();
 		  
 		   fc.candidateLogin(driver);
 		   
-		   fc.consultantProfile(driver);
+		   //fc.consultantProfile(driver);
+		   
 		   
 	}
 
