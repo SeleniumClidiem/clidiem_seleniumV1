@@ -20,21 +20,27 @@ public class CompanyRegistration  extends BrowserSetup {
 		@DataProvider
 		  public Object[][] custData() throws IOException
 		  {
+			
 			ExcelUtils E_utils = new ExcelUtils(Environment("Excel"));
 			Object[][] testData=E_utils.readXLSXFile(Environment("Sheet_RegisterCompany"));
+			for(int i=0,j=0;i<10&&j<22;i++,j++)
+			{
+				System.out.println(testData[i][j]);
+			}
+			System.out.println(testData.length);
 			  return testData; 
 		  } 
 	
 		
 		
 		@Test(dataProvider="custData")
-		public void read(String S1,String S2,String S3,String S4,String S5,String S6,String S7,String S8,String S9) throws IOException, InterruptedException, SQLException, ClassNotFoundException {
+		public void read(String S1,String S2,String S3,String S4,String S5,String S6,String S7,String S8,String S9,String S10,String S11,String S12) throws IOException, InterruptedException, SQLException, ClassNotFoundException {
 			
 			
 			   try {
-				fc.companyRegistration(driver,S1,S2,S3,S4,S5,S6,S7,S8,S9);
+				fc.companyRegistration(driver,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12);
 				//fc.companyLogin(driver);
-				FunctionalCases_propread F_Cases = new FunctionalCases_propread();
+/*				FunctionalCases_propread F_Cases = new FunctionalCases_propread();
 				Thread.sleep(10000);
 				F_Cases.companyLogin(driver, Environment("CompanySignInTabID"), Environment("BaseURL"),
 						Environment("CompanyusernameID"), S3, Environment("CompanypasswordID"), S7,
@@ -67,7 +73,7 @@ public class CompanyRegistration  extends BrowserSetup {
 				F_Cases.CompanyProfileTest(driver, S3);
 				
 				//driver.get(Environment("BaseURL"));
-				
+*/				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

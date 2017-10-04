@@ -13,13 +13,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import Businessfunctions.FunctionalCases;
+import Businessfunctions.FunctionalCases_propread;
 import FunctionalLibraries.FunctionalLibraries;
 import Utilities.ExcelUtils;
 import Utilities.UploadFileRobot;
 import Utilities.proprties_Read;
 
 public class Company_Login_Logout extends proprties_Read {
-	FunctionalCases F_Cases=new FunctionalCases();
+	FunctionalCases_propread F_Cases=new FunctionalCases_propread();
 	@Test
 	public void loginLogout() throws IOException, InterruptedException
 	{
@@ -30,9 +31,68 @@ public class Company_Login_Logout extends proprties_Read {
 		ExcelUtils RC = new ExcelUtils(Environment("Excel")); 
 		
 		WebDriver driver = new ChromeDriver();
-		F_Cases.companyLogin(driver, Environment("CompanySignInTabID") ,Environment("BaseURL"),Environment("CompanyusernameID") ,"nsailaja436@clidi.com",Environment("CompanypasswordID") ,"Test@123",Environment("CompanyLoginbuttonxpath"));
+		F_Cases.companyLogin(driver, Environment("CompanySignInTabID") ,Environment("BaseURL"),Environment("CompanyusernameID") ,"cen1@ahi.cam",Environment("CompanypasswordID") ,"Test@123",Environment("CompanyLoginbuttonxpath"));
+		String ChnagePassword_Xpath="//*[@id='header']/div[3]/div/div[2]/div/ul/li[1]/a/i";
+		fl.ClickByXpath(driver, Environment("Company_logout_Button_Xapth"), "", "", "", "", "");
+		Thread.sleep(3000);
+		System.out.println(driver.findElement(By.xpath(ChnagePassword_Xpath)).getText());
+System.out.println(Environment("Masterxpath"));
+		System.out.println(driver.findElement(By.xpath(Environment("Masterxpath"))));
+		/*System.out.println(driver.findElement(By.xpath(Environment("Masterxpath"))).isEnabled());
+		System.out.println(driver.findElement(By.xpath(Environment("Masterxpath"))).isSelected());*/
+		try
+		{
+			if(driver.findElement(By.xpath(Environment("Masterxpath"))).isEnabled()!=true)
+			{
+				F_Cases.company_Logout(driver, Environment("firstTimeLogout"));
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 		
-		fl.ClickByXpath(driver, Environment("CompanyProfileSettingxpath"), "", "", "", "", "");
+	//Branch	
+	/*	fl.ClickByXpath(driver, Environment("Masterxpath"), "", "", "", "", "");
+
+		fl.ClickByCSS(driver, Environment("Branchcss"), "", "", "", "", "");
+
+		
+		
+		
+		
+		fl.ClickByXpath(driver, Environment("AddNewBranchxpath"), "", "", "", "", "");
+		for (int i = 1; i <= RC.getLastrowno(Environment("Sheet_AddNewBranch")); i++) {
+		fl.entervalueByID(driver, Environment("BranchNameID"), RC.getStringCellData(i, 1, Environment("Sheet_AddNewBranch")),
+				"", "", "", "", "");
+
+		fl.entervalueByID(driver, Environment("BranchEmailID"), RC.getStringCellData(i, 2, Environment("Sheet_AddNewBranch")),
+				"", "", "", "", "");
+
+		fl.entervalueByID(driver, Environment("BranchContactNoID"),
+				RC.getNumericalCellData(i, 3, Environment("Sheet_AddNewBranch")), "", "", "", "", "");
+
+		fl.entervalueByID(driver, Environment("BranchStreet1ID"),
+				RC.getStringCellData(i, 4, Environment("Sheet_AddNewBranch")), "", "", "", "", "");
+
+		fl.entervalueByID(driver, Environment("BranchCityID"), RC.getStringCellData(i, 5, Environment("Sheet_AddNewBranch")),
+				"", "", "", "", "");
+
+		fl.selectDropdownByID(driver, Environment("SelectBranchCountryID"),
+				RC.getStringCellData(i, 6, Environment("Sheet_AddNewBranch")), "", "", "", "", "");
+
+		fl.selectDropdownByID(driver, Environment("SelectBranchStateID"),
+				RC.getStringCellData(i, 7, Environment("Sheet_AddNewBranch")), "", "", "", "", "");
+
+		fl.entervalueByID(driver, Environment("BranchZipcodeID"),
+				RC.getNumericalCellData(i, 8, Environment("Sheet_AddNewBranch")), "", "", "", "", "");
+
+		fl.ClickByXpath(driver, Environment("BranchSavebuttonxpath"), "", "", "", "", "");
+
+		fl.ClickByXpath(driver, Environment("BranchResetButtonxpath"), "", "", "", "", "");
+		}*/
+//Documents		
+/*		fl.ClickByXpath(driver, Environment("CompanyProfileSettingxpath"), "", "", "", "", "");
 
 		fl.ClickByXpath(driver, Environment("CompanyProfilexpath"), "", "", "", "", "");
 
@@ -90,7 +150,7 @@ public class Company_Login_Logout extends proprties_Read {
 		fl.ClickByXpath(driver, Environment("InsuranceNextButtonXPATH"), "", "", "", "", "");
 		
 		
-		
+		*/
 		
 		F_Cases.company_Logout(driver,"");
 	}

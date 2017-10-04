@@ -95,7 +95,7 @@ public class FunctionalCases_propread extends proprties_Read{
 	}
 
 	public void companyRegistration(WebDriver driver, String S1, String S2, String S3, String S4, String S5, String S6,
-			String S7, String S8, String S9)
+			String S7, String S8, String S9,String S10)
 			throws IOException, InterruptedException, FileNotFoundException, ClassNotFoundException, SQLException {
 
 		try {
@@ -133,8 +133,8 @@ public class FunctionalCases_propread extends proprties_Read{
 			// Thread.sleep(3000);
 			fl.ClickByXpath(driver, Environment("CompanyRegisterxpath"), "", "", "", "", "");
 			Thread.sleep(10000);
-
-			String Veify_Code = DB_Connection.Db_Connect(FEIN_From_Excel);
+//verify Registered COmpany
+			/*String Veify_Code = DB_Connection.Db_Connect(FEIN_From_Excel);
 			System.out.println(Veify_Code);
 
 			fl.entervalueByXpath(driver, Environment("Verififcation_textboxXPATH"), Veify_Code, "", "", "", "", "");
@@ -156,8 +156,8 @@ public class FunctionalCases_propread extends proprties_Read{
 				fl.entervalueByXpath(driver, Environment("Verififcation_textbox"), Veify_Code, "", "", "", "", "");
 				fl.ClickByXpath(driver, Environment("verify_click"), "", "", "", "", "");
 
-			}
-
+			}*/
+//verify Register Company
 			// fl.ClickByXpath(driver,Environment("successXPATH"), "", "",
 			// "", "", "");
 			// Thread.sleep(10000);
@@ -315,22 +315,34 @@ public class FunctionalCases_propread extends proprties_Read{
 	}
 
 	//need to implement this
-	public void VerifyEmaidID(WebDriver driver)
+	public void VerifyEmaidID(WebDriver driver,String control_Sheet,String FEIN_From_Excel)
 			throws IOException, InterruptedException, ClassNotFoundException, SQLException {
+		if(control_Sheet!="")
 		try {
 			
 			String Veify_Code = DB_Connection.Db_Connect(FEIN_From_Excel);
 			System.out.println(Veify_Code);
-			// fl.entervalueByXpath(driver,
-			// Environment("Verififcation_textbox"), Veify_Code, "", "", "",
-			// "", "");
-			WebElement Verify_TextBox = driver.findElement(By.xpath("//input[@id='txtverificationcode']"));
-			Verify_TextBox.sendKeys(Veify_Code);
-			// fl.checkboxByxpath(driver, Environment("verify_click"), "",
-			// "", "", "", "", "");
 
-			WebElement click_Verify = driver.findElement(By.xpath("//a[@onclick='return ConfirmVerification()']"));
-			click_Verify.click();
+			fl.entervalueByXpath(driver, Environment("Verififcation_textboxXPATH"), Veify_Code, "", "", "", "", "");
+
+			fl.ClickByXpath(driver, Environment("verify_click"), "", "", "", "", "");
+			Thread.sleep(10000);
+
+			if (driver.findElement(By.xpath(Environment("successXPATH"))).isDisplayed()) {
+				fl.ClickByXpath(driver, Environment("successXPATH"), "", "", "", "", "");
+			}
+			// WebElement Resend
+			// =driver.findElement(By.xpath(Environment("ResendXpath")));
+
+			else {
+				fl.ClickByXpath(driver, Environment("ResendXpath"), "", "", "", "", "");
+				String Veify_Code_1 = DB_Connection.Db_Connect(FEIN_From_Excel);
+				System.out.println(Veify_Code_1);
+
+				fl.entervalueByXpath(driver, Environment("Verififcation_textbox"), Veify_Code, "", "", "", "", "");
+				fl.ClickByXpath(driver, Environment("verify_click"), "", "", "", "", "");
+
+			}
 		} catch (WebDriverException e) {
 			e.printStackTrace();
 		}
@@ -341,14 +353,14 @@ public class FunctionalCases_propread extends proprties_Read{
 			String EmailID, String CompanyPasswordID_xpath, String password, String CompanyLoginButton_xpath)
 			throws IOException, InterruptedException {
 
-		System.out.println(driver);
+		/*System.out.println(driver);
 		System.out.println(CompanyLoginID_xpath);
 		System.out.println(url);
 		System.out.println(CompanyUsernameID_xpath);
 		System.out.println(EmailID);
 		System.out.println(CompanyPasswordID_xpath);
 		System.out.println(password);
-		System.out.println(CompanyLoginButton_xpath);
+		System.out.println(CompanyLoginButton_xpath);*/
 
 		try {
 			Thread.sleep(10000);
@@ -383,11 +395,12 @@ public class FunctionalCases_propread extends proprties_Read{
 			int index = 0;
 
 			for (int id = 0; id < RC.getLastrowno(Environment("Sheet_CompanyProfile")); id++) {
-				// System.out.println(RC.getStringCellData(id, 0,
-				// Environment("Sheet_CompanyProfile")));
+				System.out.println(RC.getStringCellData(id, 0,Environment("Sheet_CompanyProfile")));//prints testcaseID value
+				System.out.println(EmailID);
 				// based on email id ..read a particular row to fill profile details
-				if (RC.getStringCellData(id, 0, Environment("Sheet_CompanyProfile")).equals(EmailID)) 																					// on
-																					
+				if (RC.getStringCellData(id, 1, Environment("Sheet_CompanyProfile")).equals(EmailID)) 	//0 replaced with 1()
+					//1--refers to column->"EmailID" in CompanyProfile Sheet																				
+															//change 1 to 0 if u r run with controlsheet						
 				{
 					System.out.println(id);
 					break;
@@ -863,7 +876,7 @@ public class FunctionalCases_propread extends proprties_Read{
 							&& RC.getStringCellData(j + 1, 1, Environment("Sheet_AddUserinCompany")) != "Blank") {
 						System.out.println(j + 1 + "user is there , need to create one more user");
 						F_Cases.companyLogin(driver, Environment("CompanySignInTabID"), Environment("BaseURL"),
-								Environment("CompanyusernameID"), S3, Environment("CompanypasswordID"), S7,
+								Environment("CompanyusernameID"), S4, Environment("CompanypasswordID"), S8,
 								Environment("CompanyLoginbuttonxpath"));
 					}*/
 					

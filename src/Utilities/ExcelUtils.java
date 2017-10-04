@@ -17,7 +17,7 @@ import java.util.Properties;
 
 
 
-public class ExcelUtils{
+public class ExcelUtils extends proprties_Read{
 	
 	private XSSFWorkbook Workbook = null;
 	private XSSFSheet Worksheet = null;
@@ -104,7 +104,7 @@ public int getNumberOfRows(String SheetName) {
 		
 		System.out.println(Total_Rows);
 		System.out.println(Total_Column);
-		Object[][] excelData = new Object[Total_Rows-1][Total_Column-1];
+		Object[][] excelData = new Object[Total_Rows-1][Total_Column];
 		System.out.println("excel rows and columns");
 		
 		
@@ -112,13 +112,22 @@ public int getNumberOfRows(String SheetName) {
 		for(int i=1;i<Total_Rows;i++)
 		{
 			//XSSFRow row = Worksheet.getRow(i);
-			for(int j=1;j<Total_Column;j++)
+			for(int j=0;j<Total_Column;j++)
 			{
+				try{
+				//System.out.println(Worksheet.getRow(i).getCell(j).getStringCellValue());
+				if(Worksheet.getRow(i).getCell(j).getStringCellValue()!=null)
+				 excelData[i-1][j]=Worksheet.getRow(i).getCell(j).getStringCellValue();
+				else
+					excelData[i-1][j]="Blank";
+				}
+				catch (NullPointerException e) {
+					System.out.println(e.getMessage());
+				}
 				
-				 excelData[i-1][j-1]=Worksheet.getRow(i).getCell(j).getStringCellValue();
 				
 				//System.out.println(j);
-				System.out.println(excelData[i-1][j-1]);
+				System.out.println(excelData[i-1][j]);
 			}
 			//System.out.println(i);
 		}
@@ -150,8 +159,33 @@ public int getNumberOfRows(String SheetName) {
 		return excelData;
 		
 	}
+public int Current_Coulumn_Number(String Sheet,String header_name) throws IOException
+{
+	/*int i=MATCH("RegisterCompany",1:1,0);
+	return i-1;*/
+	//int header_col_no =row.getCellNumber(header_name);
+	ExcelUtils Excel = new ExcelUtils(Environment("Excel"));
+	Worksheet = Workbook.getSheet(Sheet);
+	int Total_Rows =Worksheet.getLastRowNum()+1;
+	//System.out.println("Method Call"+Total_Rows);
+	Row r = Worksheet.getRow(1);              //any one row is enough to know how many columns are there
+	int Total_Column=  r.getLastCellNum();
+	//System.out.println("Method Call"+Total_Column);
+	String[] header = new String[Total_Column];
+	for(int col=0;col<Total_Column;col++)
+	{
+		header[col]=Excel.getStringCellData(0, col, Sheet);
+		if(header_name.equals(header[col]))
+		{
+			return col;
+		}
+	}
+	return (Integer) null;
+	
+	
 
-
+//return Total_Column;
+}
 
 }
 	
